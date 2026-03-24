@@ -26,8 +26,8 @@ const config: Config = {
         border: "#dde4ed",
       },
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        body: ["DM Sans", "sans-serif"],
+        display: ["Inter", "sans-serif"],
+        body: ["Roboto", "sans-serif"],
       },
       keyframes: {
         fadeUp: {

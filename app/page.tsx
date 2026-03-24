@@ -2,9 +2,9 @@ import Image from "next/image";
 import ApplicationForm from "@/components/ApplicationForm";
 
 const stats = [
-  { number: "36", label: "Years in practice" },
-  { number: "35k+", label: "Patients treated" },
-  { number: "7,500", label: "Sq. ft. facility" },
+  { number: "36", label: "Years in Practice" },
+  { number: "35k+", label: "Patients Treated" },
+  { number: "7,500", label: "Sq. Ft. Facility" },
   { number: "#1", label: "Rated in Winnebago Co." },
 ];
 
@@ -61,13 +61,15 @@ export default function CareersPage() {
           <div className="flex items-center gap-3">
             <Image
               src="/logo.webp"
-              alt="Fox Valley PT Logo"
+              alt="Fox Valley Physical Therapy"
               width={44}
               height={44}
               className="brightness-0 invert"
             />
             <div className="hidden sm:block">
-              <p className="text-white font-semibold text-sm leading-tight">Fox Valley PT</p>
+              <p className="text-white font-display font-bold text-sm leading-tight">
+                Fox Valley PT
+              </p>
               <p className="text-text-light text-xs">Oshkosh, Wisconsin</p>
             </div>
           </div>
@@ -93,10 +95,10 @@ export default function CareersPage() {
           </div>
 
           <h1 className="mt-6 opacity-0 animate-fade-up animation-delay-100">
-            <span className="block font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+            <span className="block font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
               Physical Therapist
             </span>
-            <span className="block font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-teal-bright mt-2">
+            <span className="block font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-teal-bright mt-2 tracking-tight">
               Join a Clinic That&apos;s Different
             </span>
           </h1>
@@ -107,10 +109,25 @@ export default function CareersPage() {
             facility unlike anything else in the Fox Valley.
           </p>
 
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 opacity-0 animate-fade-up animation-delay-300">
+          <div className="mt-10 flex flex-wrap gap-4 opacity-0 animate-fade-up animation-delay-200">
+            <a
+              href="#apply"
+              className="bg-teal hover:bg-teal-light text-white font-semibold px-8 py-3 rounded-lg transition text-base"
+            >
+              Apply Now &rarr;
+            </a>
+            <a
+              href="#why"
+              className="border border-white/20 hover:border-white/40 text-white font-medium px-8 py-3 rounded-lg transition text-base"
+            >
+              Learn More
+            </a>
+          </div>
+
+          <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 opacity-0 animate-fade-up animation-delay-300">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <p className="font-display text-3xl sm:text-4xl font-bold text-teal-bright">
+                <p className="font-display text-3xl sm:text-4xl font-extrabold text-teal-bright tracking-tight">
                   {stat.number}
                 </p>
                 <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
@@ -127,11 +144,11 @@ export default function CareersPage() {
           {/* Left Column */}
           <div className="lg:col-span-3 space-y-20">
             {/* Why Fox Valley PT */}
-            <section>
+            <section id="why">
               <p className="text-teal text-sm font-semibold tracking-wide uppercase">
                 Why Fox Valley PT
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
                 A Private Practice That Actually Puts Its Team First
               </h2>
               <div className="mt-6 space-y-4 text-text-mid leading-relaxed">
@@ -156,7 +173,9 @@ export default function CareersPage() {
                     className="bg-white border border-border rounded-xl p-5 transition hover:border-teal hover:shadow-md"
                   >
                     <span className="text-2xl">{f.icon}</span>
-                    <h3 className="font-semibold text-text-dark mt-3">{f.title}</h3>
+                    <h3 className="font-display font-semibold text-text-dark mt-3">
+                      {f.title}
+                    </h3>
                     <p className="text-text-mid text-sm mt-1.5 leading-relaxed">{f.desc}</p>
                   </div>
                 ))}
@@ -168,7 +187,7 @@ export default function CareersPage() {
               <p className="text-teal text-sm font-semibold tracking-wide uppercase">
                 Compensation &amp; Benefits
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
                 We Take Care of Our People
               </h2>
               <p className="mt-6 text-text-mid leading-relaxed">
@@ -193,7 +212,7 @@ export default function CareersPage() {
               <p className="text-teal text-sm font-semibold tracking-wide uppercase">
                 What We&apos;re Looking For
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
                 The Right Fit, Not Just the Right Resume
               </h2>
               <p className="mt-6 text-text-mid leading-relaxed">
@@ -205,8 +224,18 @@ export default function CareersPage() {
                 {qualifications.map((q) => (
                   <li key={q} className="flex items-start gap-3">
                     <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/10 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <svg
+                        className="w-3 h-3 text-teal"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     </span>
                     <span className="text-text-mid leading-relaxed">{q}</span>
@@ -220,7 +249,7 @@ export default function CareersPage() {
               <p className="text-teal text-sm font-semibold tracking-wide uppercase">
                 About the Clinic
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
                 Oshkosh&apos;s Most Trusted PT Practice Since 1990
               </h2>
               <div className="mt-6 space-y-4 text-text-mid leading-relaxed">
@@ -241,7 +270,7 @@ export default function CareersPage() {
 
           {/* Right Column — Form */}
           <div className="lg:col-span-2 mt-16 lg:mt-0">
-            <div id="apply" className="lg:sticky lg:top-24 space-y-6">
+            <div id="apply" className="lg:sticky lg:top-24 space-y-6 scroll-mt-24">
               <ApplicationForm />
 
               {/* Clinic Info */}
@@ -283,7 +312,7 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Image
             src="/logo.webp"
-            alt="Fox Valley PT Logo"
+            alt="Fox Valley Physical Therapy"
             width={52}
             height={52}
             className="brightness-0 invert mx-auto"
