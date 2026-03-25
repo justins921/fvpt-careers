@@ -21,7 +21,7 @@ const GOLD = "#c9a84c";
 async function main() {
   const doc = new PDFDocument({
     size: "letter",
-    margins: { top: 36, bottom: 32, left: 48, right: 48 },
+    margins: { top: 40, bottom: 36, left: 50, right: 50 },
     info: {
       Title: "Physical Therapist - Fox Valley Physical Therapy & Wellness Clinic",
       Author: "Fox Valley Physical Therapy & Wellness Clinic",
@@ -38,150 +38,161 @@ async function main() {
   // ── HEADER ────────────────────────────────────────────────────
   const hTop = doc.y;
   doc.save();
-  doc.roundedRect(L, hTop, W, 118, 7).fill(NAVY);
-  doc.rect(L, hTop + 115, W, 3).fill(TEAL);
+  doc.roundedRect(L, hTop, W, 108, 7).fill(NAVY);
+  doc.rect(L, hTop + 105, W, 3).fill(TEAL);
 
-  doc.fontSize(8.5).font("Helvetica-Bold").fillColor(GOLD)
-    .text("NOW HIRING  |  OSHKOSH, WI", L + 22, hTop + 12, { width: W - 44 });
+  doc.fontSize(8).font("Helvetica-Bold").fillColor(GOLD)
+    .text("NOW HIRING  |  OSHKOSH, WI", L + 20, hTop + 12, { width: W - 40 });
 
-  doc.fontSize(26).font("Helvetica-Bold").fillColor(WHITE)
-    .text("Physical Therapist", L + 22, hTop + 26, { width: W - 44 });
+  doc.fontSize(24).font("Helvetica-Bold").fillColor(WHITE)
+    .text("Physical Therapist", L + 20, hTop + 26, { width: W - 40 });
 
-  doc.fontSize(17).font("Helvetica-Bold").fillColor(TEAL_BRIGHT)
-    .text("Join a Clinic That's Different", L + 22, hTop + 54, { width: W - 44 });
+  doc.fontSize(15).font("Helvetica-Bold").fillColor(TEAL_BRIGHT)
+    .text("Join a Clinic That's Different", L + 20, hTop + 52, { width: W - 40 });
 
-  doc.fontSize(9).font("Helvetica").fillColor("#b0bec5")
+  doc.fontSize(8.5).font("Helvetica").fillColor("#b0bec5")
     .text(
       "Oshkosh's oldest and highest-rated private practice is growing. We're looking for a hands-on PT who wants real autonomy, a remarkable team, and a facility unlike anything else in the Fox Valley.",
-      L + 22, hTop + 74, { width: W - 44, lineGap: 2 }
+      L + 20, hTop + 72, { width: W - 40, lineGap: 2 }
     );
   doc.restore();
-  doc.y = hTop + 130;
+  doc.y = hTop + 120;
 
-  // ── STATS ─────────────────────────────────────────────────────
+  // ── STATS — single compact row ────────────────────────────────
   const sY = doc.y;
   const sGap = 8;
   const sW = (W - sGap * 3) / 4;
   [
-    { n: "36", l: "Years in Practice" },
-    { n: "35k+", l: "Patients Treated" },
-    { n: "7,500", l: "Sq. Ft. Facility" },
-    { n: "#1", l: "Rated in Winnebago Co." },
+    { n: "36", l: "Years" },
+    { n: "35k+", l: "Patients" },
+    { n: "7,500 ft\u00B2", l: "Facility" },
+    { n: "#1", l: "In Winnebago Co." },
   ].forEach((s, i) => {
     const x = L + i * (sW + sGap);
     doc.save();
-    doc.roundedRect(x, sY, sW, 42, 5).fill(CREAM);
-    doc.fontSize(17).font("Helvetica-Bold").fillColor(TEAL)
+    doc.roundedRect(x, sY, sW, 36, 4).fill(CREAM);
+    doc.fontSize(15).font("Helvetica-Bold").fillColor(TEAL)
       .text(s.n, x, sY + 5, { width: sW, align: "center" });
     doc.fontSize(6.5).font("Helvetica").fillColor(TEXT_LIGHT)
-      .text(s.l.toUpperCase(), x, sY + 27, { width: sW, align: "center" });
+      .text(s.l.toUpperCase(), x, sY + 23, { width: sW, align: "center" });
     doc.restore();
   });
-  doc.y = sY + 50;
+  doc.y = sY + 48;
 
   // ── HELPERS ───────────────────────────────────────────────────
+  function sectionGap() { doc.y += 14; }
   function label(t) {
     doc.fontSize(7).font("Helvetica-Bold").fillColor(TEAL)
-      .text(t.toUpperCase(), L, doc.y, { characterSpacing: 0.9 });
-    doc.y += 1;
-  }
-  function title(t) {
-    doc.fontSize(13.5).font("Helvetica-Bold").fillColor(TEXT_DARK)
-      .text(t, L, doc.y, { width: W });
-    doc.y += 3;
-  }
-  function body(t) {
-    doc.fontSize(9).font("Helvetica").fillColor(TEXT_MID)
-      .text(t, L, doc.y, { width: W, lineGap: 2 });
+      .text(t.toUpperCase(), L, doc.y, { characterSpacing: 0.8 });
     doc.y += 2;
+  }
+  function heading(t) {
+    doc.fontSize(13).font("Helvetica-Bold").fillColor(TEXT_DARK)
+      .text(t, L, doc.y, { width: W });
+    doc.y += 5;
+  }
+  function para(t) {
+    doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
+      .text(t, L, doc.y, { width: W, lineGap: 2 });
+    doc.y += 4;
   }
 
   // ── WHY FVPT ──────────────────────────────────────────────────
   label("Why Fox Valley PT");
-  title("A Private Practice That Puts Its Team First");
-  body("We're not a franchise or corporate chain with productivity quotas. Founded in 1990 by Steve and Regina Sobojinski, every decision has been made with the same philosophy: do right by patients, do right by your people.");
-  body("Our 7,500 sq. ft. facility includes a full therapeutic pool -- the only one at a private practice in Oshkosh -- a complete gym, and the space to do genuine one-on-one care. You'll join a team with over 100 years of combined experience.");
+  heading("A Private Practice That Puts Its Team First");
+  para("We're not a franchise or corporate chain. Founded in 1990 by Steve and Regina Sobojinski, our 7,500 sq. ft. facility includes a therapeutic pool (the only one at a private practice in Oshkosh), a full gym, and the space for genuine one-on-one care. You'll join a team with over 100 years of combined experience.");
 
-  // Feature cards
-  const cW = (W - 10) / 2;
-  const cH = 38;
+  // Feature cards — single row of 4
+  const cW = (W - 18) / 4;
+  const cH = 44;
   const fY = doc.y;
   [
-    { t: "Therapeutic Pool", d: "Only private practice in Oshkosh with aquatic therapy." },
-    { t: "Real Autonomy", d: "No quotas, no cookie-cutter protocols." },
-    { t: "Flexible Scheduling", d: "Full-time or part-time -- schedules that respect your life." },
-    { t: "Growth Supported", d: "CE support, mentorship, room to specialize." },
+    { t: "Therapeutic\nPool", d: "Aquatic therapy" },
+    { t: "Real\nAutonomy", d: "No quotas" },
+    { t: "Flexible\nSchedule", d: "FT or PT" },
+    { t: "Growth\nSupported", d: "CE + mentorship" },
   ].forEach((f, i) => {
-    const col = i % 2, row = Math.floor(i / 2);
-    const x = L + col * (cW + 10);
-    const y = fY + row * (cH + 6);
+    const x = L + i * (cW + 6);
     doc.save();
-    doc.roundedRect(x, y, cW, cH, 4).lineWidth(0.5).strokeColor(BORDER).stroke();
-    doc.fontSize(9.5).font("Helvetica-Bold").fillColor(TEXT_DARK)
-      .text(f.t, x + 10, y + 7, { width: cW - 20 });
-    doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
-      .text(f.d, x + 10, y + 21, { width: cW - 20, lineGap: 1 });
+    doc.roundedRect(x, fY, cW, cH, 4).lineWidth(0.5).strokeColor(BORDER).stroke();
+    doc.fontSize(8.5).font("Helvetica-Bold").fillColor(TEXT_DARK)
+      .text(f.t, x + 6, fY + 6, { width: cW - 12, align: "center", lineGap: 1 });
+    doc.fontSize(7.5).font("Helvetica").fillColor(TEXT_LIGHT)
+      .text(f.d, x + 6, fY + 30, { width: cW - 12, align: "center" });
     doc.restore();
   });
-  doc.y = fY + 2 * (cH + 6) + 4;
+  doc.y = fY + cH;
 
-  // ── BENEFITS ──────────────────────────────────────────────────
+  sectionGap();
+
+  // ── COMPENSATION — two-column: text left, pills right ─────────
   label("Compensation & Benefits");
-  title("We Take Care of Our People");
-  body("Competitive pay based on experience, with a performance bonus structure that rewards quality work.");
+  heading("We Take Care of Our People");
 
-  const benefits = [
-    "Competitive Base + Bonus", "401(k) with Match", "Paid Time Off",
-    "Continuing Education", "Flexible Schedule", "Full-Time or Part-Time",
-    "Casual Culture", "Diverse Caseload",
+  const benefitsLeft = [
+    "Competitive Base Pay + Bonus",
+    "401(k) with Company Match",
+    "Paid Time Off",
+    "Continuing Education",
   ];
-  let pX = L, pY = doc.y;
-  benefits.forEach((b) => {
-    const tw = doc.widthOfString(b, { font: "Helvetica", size: 8 }) + 18;
-    if (pX + tw > L + W) { pX = L; pY += 18; }
-    doc.save();
-    doc.roundedRect(pX, pY, tw, 15, 7.5).lineWidth(0.5).strokeColor(BORDER).stroke();
-    doc.fontSize(8).font("Helvetica").fillColor(TEXT_DARK)
-      .text(b, pX + 9, pY + 3, { width: tw - 18 });
-    doc.restore();
-    pX += tw + 6;
+  const benefitsRight = [
+    "Flexible Schedule",
+    "Full-Time or Part-Time",
+    "Casual Culture",
+    "Diverse Caseload",
+  ];
+  const bY = doc.y;
+  const halfW = (W - 16) / 2;
+
+  [benefitsLeft, benefitsRight].forEach((col, ci) => {
+    col.forEach((b, bi) => {
+      const x = L + ci * (halfW + 16);
+      const y = bY + bi * 15;
+      doc.save();
+      doc.circle(x + 4, y + 4.5, 2.5).fill(TEAL);
+      doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_DARK)
+        .text(b, x + 12, y, { width: halfW - 12 });
+      doc.restore();
+    });
   });
-  doc.y = pY + 22;
+  doc.y = bY + 4 * 15;
+
+  sectionGap();
 
   // ── QUALIFICATIONS ────────────────────────────────────────────
   label("What We're Looking For");
-  title("The Right Fit, Not Just the Right Resume");
+  heading("The Right Fit, Not Just the Right Resume");
 
   [
-    "Licensed Physical Therapist in Wisconsin (or eligibility to obtain WI licensure)",
-    "Strong manual therapy foundation -- McKenzie Approach, muscle energy, myofascial release, joint mobilization",
-    "Comfortable treating patients of all ages and abilities, including athletes",
-    "Positive communicator who partners well with patients and referring physicians",
-    "Motivated to be part of the Oshkosh community, not just a clinic employee",
-    "New grads with strong manual therapy foundations welcome to apply",
+    "Licensed Physical Therapist in Wisconsin (or eligibility to obtain licensure)",
+    "Strong manual therapy foundation -- McKenzie Approach, myofascial release, joint mobilization",
+    "Comfortable treating all ages and abilities, including athletes",
+    "Positive communicator who partners with patients and referring physicians",
+    "New grads with strong manual therapy foundations welcome",
   ].forEach((q) => {
     const qY = doc.y;
     doc.save();
-    doc.circle(L + 5, qY + 5, 4.5).fill("#e0f0f0");
-    doc.strokeColor(TEAL).lineWidth(1.1);
-    doc.moveTo(L + 2, qY + 5).lineTo(L + 4.5, qY + 7.5).lineTo(L + 8.5, qY + 2.5).stroke();
+    doc.circle(L + 4, qY + 4.5, 4).fill("#e8f4f4");
+    doc.strokeColor(TEAL).lineWidth(1);
+    doc.moveTo(L + 1.5, qY + 4.5).lineTo(L + 3.5, qY + 6.5).lineTo(L + 7, qY + 2.5).stroke();
     doc.restore();
     doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
-      .text(q, L + 17, qY, { width: W - 17, lineGap: 1 });
-    doc.y += 3;
+      .text(q, L + 16, qY, { width: W - 16 });
+    doc.y += 5;
   });
-  doc.y += 3;
 
-  // ── ABOUT ─────────────────────────────────────────────────────
+  sectionGap();
+
+  // ── ABOUT — condensed ─────────────────────────────────────────
   label("About the Clinic");
-  title("Oshkosh's Most Trusted PT Practice Since 1990");
-  body("Established by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT, Fox Valley Physical Therapy has grown into a 7,500 sq. ft. facility with 14 healthcare professionals. Specialties: McKenzie Method, dry needling, Graston technique, aquatic therapy, TMJ, vestibular rehab, pediatric PT, and orthopedic/sports medicine.");
+  heading("Oshkosh's Most Trusted PT Practice Since 1990");
+  para("Founded by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT. Team of 14 professionals. Specialties: McKenzie Method, dry needling, Graston technique, aquatic therapy, TMJ, vestibular rehab, pediatric PT, and orthopedic/sports medicine.");
 
-  doc.y += 3;
+  sectionGap();
 
   // ── CTA BOX with QR Code ────────────────────────────────────
   const pageBottom = doc.page.height - doc.page.margins.bottom;
-  const ctaH = 66;
+  const ctaH = 62;
   if (doc.y + ctaH + 18 > pageBottom) doc.addPage();
 
   const qrBuffer = await QRCode.toBuffer("https://careers.foxvalleyphysicaltherapy.com", {
@@ -190,7 +201,7 @@ async function main() {
   });
 
   const ctaY = doc.y;
-  const qrSize = 52;
+  const qrSize = 48;
   const qrX = L + W - qrSize - 14;
 
   doc.save();
@@ -199,17 +210,17 @@ async function main() {
 
   const textW = W - qrSize - 40;
   doc.fontSize(14).font("Helvetica-Bold").fillColor(TEXT_DARK)
-    .text("Ready to Join Our Team?", L + 16, ctaY + 9, { width: textW, lineBreak: false });
-  doc.fontSize(9.5).font("Helvetica").fillColor(TEXT_MID)
-    .text("Apply at careers.foxvalleyphysicaltherapy.com", L + 16, ctaY + 27, { width: textW, lineBreak: false });
-  doc.fontSize(9.5).font("Helvetica-Bold").fillColor(TEXT_DARK)
-    .text("Or call us: (920) 235-8966", L + 16, ctaY + 42, { width: textW, lineBreak: false });
+    .text("Ready to Join Our Team?", L + 16, ctaY + 8, { width: textW, lineBreak: false });
+  doc.fontSize(9).font("Helvetica").fillColor(TEXT_MID)
+    .text("Apply at careers.foxvalleyphysicaltherapy.com", L + 16, ctaY + 26, { width: textW, lineBreak: false });
+  doc.fontSize(9).font("Helvetica-Bold").fillColor(TEXT_DARK)
+    .text("Or call us: (920) 235-8966", L + 16, ctaY + 40, { width: textW, lineBreak: false });
   doc.fontSize(7.5).font("Helvetica").fillColor(TEXT_LIGHT)
-    .text("Scan to apply online", L + 16, ctaY + 56, { width: textW, lineBreak: false });
+    .text("Scan to apply online", L + 16, ctaY + 53, { width: textW, lineBreak: false });
 
   doc.image(qrBuffer, qrX, ctaY + 7, { width: qrSize, height: qrSize });
   doc.restore();
-  doc.y = ctaY + ctaH + 8;
+  doc.y = ctaY + ctaH + 10;
 
   // ── FOOTER ────────────────────────────────────────────────────
   doc.fontSize(7).font("Helvetica").fillColor(TEXT_LIGHT)
