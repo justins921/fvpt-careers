@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physical Therapist – Fox Valley Physical Therapy &amp; Wellness Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d2240;
+      --teal: #1a7a78;
+      --teal-bright: #2dc4c0;
+      --gold: #c9a84c;
+      --cream: #f8f5ef;
+      --text-dark: #0d1f35;
+      --text-mid: #3d5470;
+      --text-light: #6b85a0;
+      --border: #dde4ed;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background: #fff;
+    }
+
+    @page {
+      size: letter;
+      margin: 0.6in 0.7in;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .stat-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .feature-card { break-inside: avoid; }
+      .section { break-inside: avoid; }
+      .apply-box { break-inside: avoid; }
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    /* Header */
+    .header {
+      background: var(--navy);
+      color: #fff;
+      padding: 36px 40px;
+      border-radius: 12px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .header-badge .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .header h1 .teal {
+      color: var(--teal-bright);
+      font-size: 28px;
+      font-weight: 700;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .header p {
+      color: #b0bec5;
+      font-size: 15px;
+      max-width: 520px;
+      margin-top: 12px;
+      line-height: 1.55;
+    }
+
+    /* Stats Row */
+    .stats {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      flex: 1;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      text-align: center;
+    }
+
+    .stat-card .number {
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-card .label {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .section p {
+      color: var(--text-mid);
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    /* Feature Grid */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .feature-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .feature-card .icon {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .feature-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .feature-card p {
+      font-size: 12.5px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Benefits Pills */
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .benefit-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    /* Qualifications List */
+    .qual-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .qual-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .qual-list li .check {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      background: rgba(26, 122, 120, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .qual-list li .check svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    /* Apply Box */
+    .apply-box {
+      background: var(--cream);
+      border: 2px solid var(--teal);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .apply-box h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .apply-box p {
+      font-size: 14px;
+      color: var(--text-mid);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .apply-box .cta {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--teal);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .footer a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    /* Two column layout for lower sections */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">
+      <span class="dot"></span>
+      Now Hiring &middot; Oshkosh, WI
+    </div>
+    <h1>
+      Physical Therapist
+      <span class="teal">Join a Clinic That's Different</span>
+    </h1>
+    <p>
+      Oshkosh's oldest and highest-rated private practice is growing. We're looking for
+      a hands-on PT who wants real autonomy, a remarkable team, and a facility unlike
+      anything else in the Fox Valley.
+    </p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="number">36</div>
+      <div class="label">Years in Practice</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">35k+</div>
+      <div class="label">Patients Treated</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">7,500</div>
+      <div class="label">Sq. Ft. Facility</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">#1</div>
+      <div class="label">Rated in Winnebago Co.</div>
+    </div>
+  </div>
+
+  <!-- Why Fox Valley PT -->
+  <div class="section">
+    <div class="section-label">Why Fox Valley PT</div>
+    <h2>A Private Practice That Actually Puts Its Team First</h2>
+    <p>
+      We're not a franchise or corporate chain with productivity quotas. Founded in 1990
+      by Steve and Regina Sobojinski, every decision has been made with the same philosophy:
+      do right by patients, do right by your people.
+    </p>
+    <p>
+      Our 7,500 sq. ft. facility includes a full therapeutic pool — the only one at a
+      private practice in Oshkosh — a complete gym, and the space to do genuine one-on-one
+      care. You'll join a team of PTs, PTAs, and an Athletic Trainer with over 100 years
+      of combined experience.
+    </p>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">🏊</div>
+        <h3>Therapeutic Pool</h3>
+        <p>Only private practice in Oshkosh with aquatic therapy. Expand your treatment capabilities.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤝</div>
+        <h3>Real Autonomy</h3>
+        <p>Treat patients the way you know is right. No quotas, no cookie-cutter protocols.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📅</div>
+        <h3>Flexible Scheduling</h3>
+        <p>Full-time or part-time, we build schedules that respect your life.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌱</div>
+        <h3>Growth Supported</h3>
+        <p>Continuing education, mentorship from experienced clinicians, room to specialize.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two-column: Benefits + Qualifications -->
+  <div class="two-col">
+    <!-- Compensation & Benefits -->
+    <div class="section">
+      <div class="section-label">Compensation &amp; Benefits</div>
+      <h2>We Take Care of Our People</h2>
+      <p>
+        Competitive pay based on experience, with a performance bonus structure
+        that rewards quality work.
+      </p>
+      <div class="benefits">
+        <span class="benefit-pill">💰 Competitive Base + Bonus</span>
+        <span class="benefit-pill">📈 401(k) with Match</span>
+        <span class="benefit-pill">🏖️ Paid Time Off</span>
+        <span class="benefit-pill">📚 Continuing Education</span>
+        <span class="benefit-pill">⏰ Flexible Schedule</span>
+        <span class="benefit-pill">🏥 Full-Time or Part-Time</span>
+        <span class="benefit-pill">🤸 Casual Culture</span>
+        <span class="benefit-pill">🔬 Diverse Caseload</span>
+      </div>
+    </div>
+
+    <!-- Qualifications -->
+    <div class="section">
+      <div class="section-label">What We're Looking For</div>
+      <h2>The Right Fit</h2>
+      <ul class="qual-list">
+        <li>
+          <span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="#1a7a78" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+          Licensed Physical Therapist in Wisconsin (or eligibility)
+        </li>
+        <li>
+          <span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="#1a7a78" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+          Strong manual therapy foundation — McKenzie, myofascial release, joint mobilization
+        </li>
+        <li>
+          <span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="#1a7a78" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+          Comfortable treating all ages, including athletes
+        </li>
+        <li>
+          <span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="#1a7a78" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+          Positive communicator who partners with patients and physicians
+        </li>
+        <li>
+          <span class="check"><svg fill="none" viewBox="0 0 24 24" stroke="#1a7a78" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+          New grads with strong manual therapy skills welcome
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- About the Clinic -->
+  <div class="section">
+    <div class="section-label">About the Clinic</div>
+    <h2>Oshkosh's Most Trusted PT Practice Since 1990</h2>
+    <p>
+      Established by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT, Fox Valley Physical
+      Therapy has grown into a 7,500 sq. ft. facility with a team of 14 healthcare professionals.
+      We specialize in one-on-one physical therapy, occupational therapy, athletic training,
+      and sports analysis.
+    </p>
+    <p>
+      Clinical specialties include the McKenzie Method, dry needling, Graston technique,
+      aquatic therapy, TMJ treatment, vestibular rehabilitation, pediatric PT, and a full
+      spectrum of orthopedic and sports medicine care.
+    </p>
+  </div>
+
+  <!-- Apply CTA -->
+  <div class="apply-box">
+    <h3>Ready to Join Our Team?</h3>
+    <p>Apply online at <a href="https://careers.foxvalleyphysicaltherapy.com" style="color: var(--teal); font-weight: 500;">careers.foxvalleyphysicaltherapy.com</a></p>
+    <p>Or call us directly at <strong>(920) 235-8966</strong></p>
+    <a href="https://careers.foxvalleyphysicaltherapy.com" class="cta">Apply Now →</a>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>
+      Fox Valley Physical Therapy &amp; Wellness Clinic &middot;
+      909 S. Washburn Street, Oshkosh, WI 54904 &middot;
+      <a href="https://www.foxvalleyphysicaltherapy.com">foxvalleyphysicaltherapy.com</a>
+    </p>
+  </div>
+
+</body>
+</html>
