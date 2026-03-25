@@ -21,7 +21,7 @@ const GOLD = "#c9a84c";
 async function main() {
   const doc = new PDFDocument({
     size: "letter",
-    margins: { top: 30, bottom: 30, left: 44, right: 44 },
+    margins: { top: 48, bottom: 48, left: 56, right: 56 },
     info: {
       Title: "Physical Therapist - Fox Valley Physical Therapy & Wellness Clinic",
       Author: "Fox Valley Physical Therapy & Wellness Clinic",
@@ -38,29 +38,29 @@ async function main() {
   // ── HEADER ────────────────────────────────────────────────────
   const hTop = doc.y;
   doc.save();
-  doc.roundedRect(L, hTop, W, 120, 7).fill(NAVY);
-  doc.rect(L, hTop + 117, W, 3).fill(TEAL);
+  doc.roundedRect(L, hTop, W, 138, 8).fill(NAVY);
+  doc.rect(L, hTop + 135, W, 3).fill(TEAL);
 
-  doc.fontSize(8).font("Helvetica-Bold").fillColor(GOLD)
-    .text("NOW HIRING  |  OSHKOSH, WI", L + 20, hTop + 14, { width: W - 40 });
+  doc.fontSize(9).font("Helvetica-Bold").fillColor(GOLD)
+    .text("NOW HIRING  |  OSHKOSH, WI", L + 24, hTop + 18, { width: W - 48 });
 
-  doc.fontSize(24).font("Helvetica-Bold").fillColor(WHITE)
-    .text("Physical Therapist", L + 20, hTop + 28, { width: W - 40 });
+  doc.fontSize(28).font("Helvetica-Bold").fillColor(WHITE)
+    .text("Physical Therapist", L + 24, hTop + 36, { width: W - 48 });
 
-  doc.fontSize(16).font("Helvetica-Bold").fillColor(TEAL_BRIGHT)
-    .text("Join a Clinic That's Different", L + 20, hTop + 56, { width: W - 40 });
+  doc.fontSize(18).font("Helvetica-Bold").fillColor(TEAL_BRIGHT)
+    .text("Join a Clinic That's Different", L + 24, hTop + 68, { width: W - 48 });
 
-  doc.fontSize(8.5).font("Helvetica").fillColor("#b0bec5")
+  doc.fontSize(9.5).font("Helvetica").fillColor("#b0bec5")
     .text(
       "Oshkosh's oldest and highest-rated private practice is growing. We're looking for a hands-on PT who wants real autonomy, a remarkable team, and a facility unlike anything else in the Fox Valley.",
-      L + 20, hTop + 78, { width: W - 40, lineGap: 1.5 }
+      L + 24, hTop + 94, { width: W - 48, lineGap: 2.5 }
     );
   doc.restore();
-  doc.y = hTop + 128;
+  doc.y = hTop + 154;
 
   // ── STATS ─────────────────────────────────────────────────────
   const sY = doc.y;
-  const sGap = 6;
+  const sGap = 10;
   const sW = (W - sGap * 3) / 4;
   [
     { n: "36", l: "Years in Practice" },
@@ -70,29 +70,30 @@ async function main() {
   ].forEach((s, i) => {
     const x = L + i * (sW + sGap);
     doc.save();
-    doc.roundedRect(x, sY, sW, 38, 4).fill(CREAM);
-    doc.fontSize(16).font("Helvetica-Bold").fillColor(TEAL)
-      .text(s.n, x, sY + 4, { width: sW, align: "center" });
-    doc.fontSize(6.5).font("Helvetica").fillColor(TEXT_LIGHT)
-      .text(s.l.toUpperCase(), x, sY + 24, { width: sW, align: "center" });
+    doc.roundedRect(x, sY, sW, 48, 5).fill(CREAM);
+    doc.fontSize(20).font("Helvetica-Bold").fillColor(TEAL)
+      .text(s.n, x, sY + 8, { width: sW, align: "center" });
+    doc.fontSize(7).font("Helvetica").fillColor(TEXT_LIGHT)
+      .text(s.l.toUpperCase(), x, sY + 32, { width: sW, align: "center" });
     doc.restore();
   });
-  doc.y = sY + 44;
+  doc.y = sY + 66;
 
   // ── HELPERS ───────────────────────────────────────────────────
   function label(t) {
-    doc.fontSize(7).font("Helvetica-Bold").fillColor(TEAL)
-      .text(t.toUpperCase(), L, doc.y, { characterSpacing: 0.8 });
+    doc.fontSize(7.5).font("Helvetica-Bold").fillColor(TEAL)
+      .text(t.toUpperCase(), L, doc.y, { characterSpacing: 1 });
+    doc.y += 3;
   }
   function title(t) {
-    doc.fontSize(13).font("Helvetica-Bold").fillColor(TEXT_DARK)
+    doc.fontSize(15).font("Helvetica-Bold").fillColor(TEXT_DARK)
       .text(t, L, doc.y, { width: W });
-    doc.y += 2;
+    doc.y += 6;
   }
   function body(t) {
-    doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
-      .text(t, L, doc.y, { width: W, lineGap: 1.5 });
-    doc.y += 1;
+    doc.fontSize(9.5).font("Helvetica").fillColor(TEXT_MID)
+      .text(t, L, doc.y, { width: W, lineGap: 2.5 });
+    doc.y += 6;
   }
 
   // ── WHY FVPT ──────────────────────────────────────────────────
@@ -102,8 +103,8 @@ async function main() {
   body("Our 7,500 sq. ft. facility includes a full therapeutic pool -- the only one at a private practice in Oshkosh -- a complete gym, and the space to do genuine one-on-one care. You'll join a team with over 100 years of combined experience.");
 
   // Feature cards
-  const cW = (W - 8) / 2;
-  const cH = 36;
+  const cW = (W - 14) / 2;
+  const cH = 46;
   const fY = doc.y;
   [
     { t: "Therapeutic Pool", d: "Only private practice in Oshkosh with aquatic therapy." },
@@ -112,17 +113,17 @@ async function main() {
     { t: "Growth Supported", d: "CE support, mentorship, room to specialize." },
   ].forEach((f, i) => {
     const col = i % 2, row = Math.floor(i / 2);
-    const x = L + col * (cW + 8);
-    const y = fY + row * (cH + 5);
+    const x = L + col * (cW + 14);
+    const y = fY + row * (cH + 10);
     doc.save();
-    doc.roundedRect(x, y, cW, cH, 4).lineWidth(0.5).strokeColor(BORDER).stroke();
-    doc.fontSize(9).font("Helvetica-Bold").fillColor(TEXT_DARK)
-      .text(f.t, x + 8, y + 6, { width: cW - 16 });
-    doc.fontSize(8).font("Helvetica").fillColor(TEXT_MID)
-      .text(f.d, x + 8, y + 19, { width: cW - 16, lineGap: 1 });
+    doc.roundedRect(x, y, cW, cH, 5).lineWidth(0.6).strokeColor(BORDER).stroke();
+    doc.fontSize(10).font("Helvetica-Bold").fillColor(TEXT_DARK)
+      .text(f.t, x + 12, y + 10, { width: cW - 24 });
+    doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
+      .text(f.d, x + 12, y + 25, { width: cW - 24, lineGap: 1.5 });
     doc.restore();
   });
-  doc.y = fY + 2 * (cH + 5) + 2;
+  doc.y = fY + 2 * (cH + 10) + 10;
 
   // ── BENEFITS ──────────────────────────────────────────────────
   label("Compensation & Benefits");
@@ -136,16 +137,16 @@ async function main() {
   ];
   let pX = L, pY = doc.y;
   benefits.forEach((b) => {
-    const tw = doc.widthOfString(b, { font: "Helvetica", size: 8 }) + 16;
-    if (pX + tw > L + W) { pX = L; pY += 16; }
+    const tw = doc.widthOfString(b, { font: "Helvetica", size: 8.5 }) + 20;
+    if (pX + tw > L + W) { pX = L; pY += 22; }
     doc.save();
-    doc.roundedRect(pX, pY, tw, 14, 7).lineWidth(0.5).strokeColor(BORDER).stroke();
-    doc.fontSize(8).font("Helvetica").fillColor(TEXT_DARK)
-      .text(b, pX + 8, pY + 2.5, { width: tw - 16 });
+    doc.roundedRect(pX, pY, tw, 18, 9).lineWidth(0.5).strokeColor(BORDER).stroke();
+    doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_DARK)
+      .text(b, pX + 10, pY + 4, { width: tw - 20 });
     doc.restore();
-    pX += tw + 5;
+    pX += tw + 8;
   });
-  doc.y = pY + 20;
+  doc.y = pY + 36;
 
   // ── QUALIFICATIONS ────────────────────────────────────────────
   label("What We're Looking For");
@@ -161,29 +162,28 @@ async function main() {
   ].forEach((q) => {
     const qY = doc.y;
     doc.save();
-    doc.circle(L + 4, qY + 4.5, 4.5).fill("#e0f0f0");
-    doc.strokeColor(TEAL).lineWidth(1);
-    doc.moveTo(L + 1.5, qY + 4.5).lineTo(L + 3.5, qY + 6.5).lineTo(L + 7, qY + 2.5).stroke();
+    doc.circle(L + 5, qY + 5.5, 5).fill("#e0f0f0");
+    doc.strokeColor(TEAL).lineWidth(1.2);
+    doc.moveTo(L + 2, qY + 5.5).lineTo(L + 4.5, qY + 8).lineTo(L + 8.5, qY + 3).stroke();
     doc.restore();
-    doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
-      .text(q, L + 16, qY, { width: W - 16, lineGap: 1 });
-    doc.y += 2;
+    doc.fontSize(9).font("Helvetica").fillColor(TEXT_MID)
+      .text(q, L + 18, qY, { width: W - 18, lineGap: 1.5 });
+    doc.y += 6;
   });
-  doc.y += 2;
+  doc.y += 8;
 
   // ── ABOUT ─────────────────────────────────────────────────────
   label("About the Clinic");
   title("Oshkosh's Most Trusted PT Practice Since 1990");
   body("Established by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT, Fox Valley Physical Therapy has grown into a 7,500 sq. ft. facility with 14 healthcare professionals. Specialties: McKenzie Method, dry needling, Graston technique, aquatic therapy, TMJ, vestibular rehab, pediatric PT, and orthopedic/sports medicine.");
 
-  doc.y += 3;
+  doc.y += 10;
 
   // ── CTA BOX with QR Code ────────────────────────────────────
   const pageBottom = doc.page.height - doc.page.margins.bottom;
-  const ctaH = 72;
-  if (doc.y + ctaH + 20 > pageBottom) doc.addPage();
+  const ctaH = 80;
+  if (doc.y + ctaH + 24 > pageBottom) doc.addPage();
 
-  // Generate QR code as PNG buffer
   const qrBuffer = await QRCode.toBuffer("https://careers.foxvalleyphysicaltherapy.com", {
     width: 200,
     margin: 0,
@@ -191,32 +191,30 @@ async function main() {
   });
 
   const ctaY = doc.y;
-  const qrSize = 56;
-  const qrX = L + W - qrSize - 14;
+  const qrSize = 62;
+  const qrX = L + W - qrSize - 18;
 
   doc.save();
-  doc.roundedRect(L, ctaY, W, ctaH, 6)
+  doc.roundedRect(L, ctaY, W, ctaH, 8)
     .lineWidth(1.5).strokeColor(TEAL).fillAndStroke(CREAM, TEAL);
 
-  // Text on the left
-  const textW = W - qrSize - 40;
-  doc.fontSize(14).font("Helvetica-Bold").fillColor(TEXT_DARK)
-    .text("Ready to Join Our Team?", L + 16, ctaY + 10, { width: textW, lineBreak: false });
-  doc.fontSize(9).font("Helvetica").fillColor(TEXT_MID)
-    .text("Apply at careers.foxvalleyphysicaltherapy.com", L + 16, ctaY + 28, { width: textW, lineBreak: false });
-  doc.fontSize(9).font("Helvetica").fillColor(TEXT_MID)
-    .text("Or call us: (920) 235-8966", L + 16, ctaY + 42, { width: textW, lineBreak: false });
-  doc.fontSize(7.5).font("Helvetica").fillColor(TEXT_LIGHT)
-    .text("Scan the QR code to apply online", L + 16, ctaY + 56, { width: textW, lineBreak: false });
+  const textW = W - qrSize - 50;
+  doc.fontSize(16).font("Helvetica-Bold").fillColor(TEXT_DARK)
+    .text("Ready to Join Our Team?", L + 20, ctaY + 12, { width: textW, lineBreak: false });
+  doc.fontSize(10).font("Helvetica").fillColor(TEXT_MID)
+    .text("Apply at careers.foxvalleyphysicaltherapy.com", L + 20, ctaY + 34, { width: textW, lineBreak: false });
+  doc.fontSize(10).font("Helvetica-Bold").fillColor(TEXT_DARK)
+    .text("Or call us: (920) 235-8966", L + 20, ctaY + 50, { width: textW, lineBreak: false });
+  doc.fontSize(8).font("Helvetica").fillColor(TEXT_LIGHT)
+    .text("Scan the QR code to apply online", L + 20, ctaY + 66, { width: textW, lineBreak: false });
 
-  // QR code on the right
-  doc.image(qrBuffer, qrX, ctaY + 8, { width: qrSize, height: qrSize });
+  doc.image(qrBuffer, qrX, ctaY + 9, { width: qrSize, height: qrSize });
 
   doc.restore();
-  doc.y = ctaY + ctaH + 8;
+  doc.y = ctaY + ctaH + 14;
 
   // ── FOOTER ────────────────────────────────────────────────────
-  doc.fontSize(7).font("Helvetica").fillColor(TEXT_LIGHT)
+  doc.fontSize(7.5).font("Helvetica").fillColor(TEXT_LIGHT)
     .text(
       "Fox Valley Physical Therapy & Wellness Clinic  |  909 S. Washburn Street, Oshkosh, WI 54904  |  foxvalleyphysicaltherapy.com",
       L, doc.y, { width: W, align: "center", lineBreak: false }
