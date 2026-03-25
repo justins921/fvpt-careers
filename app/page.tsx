@@ -124,13 +124,16 @@ export default function CareersPage() {
             </a>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 opacity-0 animate-fade-up animation-delay-300">
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 opacity-0 animate-fade-up animation-delay-300">
             {stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="font-display text-3xl sm:text-4xl font-extrabold text-teal-bright tracking-tight">
+              <div
+                key={stat.label}
+                className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-center"
+              >
+                <p className="font-display text-2xl sm:text-3xl font-extrabold text-teal-bright tracking-tight">
                   {stat.number}
                 </p>
-                <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
+                <p className="text-gray-400 text-xs mt-0.5 uppercase tracking-wider">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -166,17 +169,16 @@ export default function CareersPage() {
                 </p>
               </div>
 
-              <div className="mt-10 grid sm:grid-cols-2 gap-4">
+              <div className="mt-8 grid sm:grid-cols-2 gap-3">
                 {features.map((f) => (
                   <div
                     key={f.title}
-                    className="bg-white border border-border rounded-xl p-5 transition hover:border-teal hover:shadow-md"
+                    className="bg-white border border-border rounded-lg px-4 py-3 transition hover:border-teal hover:shadow-sm"
                   >
-                    <span className="text-2xl">{f.icon}</span>
-                    <h3 className="font-display font-semibold text-text-dark mt-3">
+                    <h3 className="font-display font-semibold text-text-dark text-sm">
                       {f.title}
                     </h3>
-                    <p className="text-text-mid text-sm mt-1.5 leading-relaxed">{f.desc}</p>
+                    <p className="text-text-mid text-sm mt-1 leading-snug">{f.desc}</p>
                   </div>
                 ))}
               </div>
