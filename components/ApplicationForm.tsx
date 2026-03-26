@@ -210,7 +210,7 @@ export default function ApplicationForm() {
               required
               accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               onChange={handleFileChange}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              className="hidden"
             />
             {fileName ? (
               <div className="flex items-center justify-center gap-2 text-teal">
