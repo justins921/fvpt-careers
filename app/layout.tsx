@@ -100,8 +100,8 @@ export default function RootLayout({
                 currency: "USD",
                 value: {
                   "@type": "QuantitativeValue",
-                  minValue: 70000,
-                  maxValue: 95000,
+                  minValue: 80000,
+                  maxValue: 100000,
                   unitText: "YEAR",
                 },
               },

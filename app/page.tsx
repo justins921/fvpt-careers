@@ -191,11 +191,11 @@ export default function CareersPage() {
                 Compensation &amp; Benefits
               </p>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
-                We Take Care of Our People
+                We Support Our People
               </h2>
               <p className="mt-6 text-text-mid leading-relaxed">
-                Competitive pay based on experience, with a performance bonus structure
-                that rewards the quality work you&apos;re doing.
+                $80,000&ndash;$100,000/year based on experience, with a performance bonus
+                structure that rewards the quality work you&apos;re doing.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">

@@ -132,8 +132,8 @@ async function main() {
 
   // ── BENEFITS ──────────────────────────────────────────────────
   label("Compensation & Benefits");
-  heading("We Take Care of Our People");
-  para("Competitive pay based on experience, with a performance bonus structure that rewards quality work.");
+  heading("We Support Our People");
+  para("$80,000-$100,000/year based on experience, with a performance bonus structure that rewards quality work.");
 
   const benefitsLeft = [
     "Competitive Base Pay + Bonus",
