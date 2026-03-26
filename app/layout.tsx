@@ -75,7 +75,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: "Fox Valley Physical Therapy & Wellness Clinic",
                 sameAs: "https://www.foxvalleyphysicaltherapy.com",
-                logo: "https://careers.foxvalleyphysicaltherapy.com/logo.webp",
+                logo: "https://careers.foxvalleyphysicaltherapy.com/FVPT%20logo.webp",
               },
               jobLocation: {
                 "@type": "Place",

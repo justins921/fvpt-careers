@@ -60,11 +60,10 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <Image
-              src="/logo.webp"
+              src="/FVPT logo.webp"
               alt="Fox Valley Physical Therapy"
               width={44}
               height={44}
-              className="brightness-0 invert"
             />
             <div className="hidden sm:block">
               <p className="text-white font-display font-bold text-sm leading-tight">
@@ -313,11 +312,11 @@ export default function CareersPage() {
       <footer className="bg-navy py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Image
-            src="/logo.webp"
+            src="/FVPT logo.webp"
             alt="Fox Valley Physical Therapy"
             width={52}
             height={52}
-            className="brightness-0 invert mx-auto"
+            className="mx-auto"
           />
           <p className="text-gray-400 text-sm mt-4">
             &copy; 2026 Fox Valley Physical Therapy &amp; Wellness Clinic &middot; 909 S.
