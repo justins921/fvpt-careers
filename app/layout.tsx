@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Physical Therapist Job | Fox Valley Physical Therapy – Oshkosh, WI",
   description:
     "Fox Valley Physical Therapy is hiring a Physical Therapist in Oshkosh, WI. Oshkosh's oldest and highest-rated private practice — 36 years, therapeutic pool, real autonomy. Full-time or part-time.",
+  icons: {
+    icon: "/FVPT logo.webp",
+    apple: "/FVPT logo.webp",
+  },
   openGraph: {
     title: "Physical Therapist Job | Fox Valley Physical Therapy – Oshkosh, WI",
     description:
