@@ -56,7 +56,7 @@ export default function CareersPage() {
   return (
     <>
       {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-navy">
+      <nav className="sticky top-0 z-50 bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <Image
@@ -64,10 +64,9 @@ export default function CareersPage() {
               alt="Fox Valley Physical Therapy"
               width={44}
               height={44}
-              className="brightness-0 invert"
             />
             <div className="hidden sm:block">
-              <p className="text-white font-display font-bold text-sm leading-tight">
+              <p className="text-navy font-display font-bold text-sm leading-tight">
                 Fox Valley PT
               </p>
               <p className="text-text-light text-xs">Oshkosh, Wisconsin</p>
@@ -310,16 +309,16 @@ export default function CareersPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-navy py-12">
+      <footer className="bg-cream border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Image
             src="/FVPT logo.webp"
             alt="Fox Valley Physical Therapy"
             width={52}
             height={52}
-            className="brightness-0 invert mx-auto"
+            className="mx-auto"
           />
-          <p className="text-gray-400 text-sm mt-4">
+          <p className="text-text-mid text-sm mt-4">
             &copy; 2026 Fox Valley Physical Therapy &amp; Wellness Clinic &middot; 909 S.
             Washburn St., Oshkosh, WI 54904
           </p>
