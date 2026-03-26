@@ -35,7 +35,9 @@ const benefits = [
   "\uD83D\uDCB0 Competitive Base Pay + Bonus",
   "\uD83D\uDCC8 401(k) with Company Match",
   "\uD83C\uDFD6\uFE0F Paid Time Off",
+  "\uD83C\uDF34 Vacation",
   "\uD83D\uDCDA Continuing Education",
+  "\uD83C\uDFC5 APTA Professional Membership",
   "\u23F0 Flexible Schedule",
   "\uD83C\uDFE5 Full-Time or Part-Time",
   "\uD83E\uDD38 Professional Yet Casual Culture",
@@ -44,7 +46,7 @@ const benefits = [
 
 const qualifications = [
   "Licensed Physical Therapist in Wisconsin (or eligibility to obtain WI licensure)",
-  "Strong foundation in manual therapy \u2014 McKenzie Approach, muscle energy, myofascial release, joint mobilization",
+  "Strong foundation in manual therapy \u2014 McKenzie Approach, muscle energy, myofascial release, joint mobilization, etc.",
   "Comfortable treating patients of all ages and abilities, including athletes",
   "Positive, self-directed communicator who partners well with patients and referring physicians",
   "Motivated to be part of the Oshkosh community, not just a clinic employee",
@@ -98,7 +100,7 @@ export default function CareersPage() {
               Physical Therapist
             </span>
             <span className="block font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-teal-bright mt-2 tracking-tight">
-              Join a Clinic That&apos;s Different
+              Join a Private Practice
             </span>
           </h1>
 
@@ -257,13 +259,13 @@ export default function CareersPage() {
                 <p>
                   Established by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT, Fox
                   Valley Physical Therapy has grown into a 7,500 sq. ft. facility with a
-                  team of 14 healthcare professionals. We specialize in one-on-one physical
+                  team of 10 healthcare professionals. We specialize in one-on-one physical
                   therapy, occupational therapy, athletic training, and sports analysis.
                 </p>
                 <p>
-                  Clinical specialties include the McKenzie Method, dry needling, Graston
-                  technique, aquatic therapy, TMJ treatment, vestibular rehabilitation,
-                  pediatric PT, and a full spectrum of orthopedic and sports medicine care.
+                  Clinical specialties include orthopedic and sports medicine care, spine
+                  care by the McKenzie Method, dry needling, aquatic therapy, TMJ treatment,
+                  and post-operative rehabilitation.
                 </p>
               </div>
             </section>

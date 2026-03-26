@@ -50,21 +50,23 @@ export default function RootLayout({
                 "<li>Oshkosh's oldest and highest-rated private practice, serving the community for 36 years</li>" +
                 "<li>7,500 sq. ft. facility with therapeutic pool and full gym</li>" +
                 "<li>Real clinical autonomy — no quotas, no cookie-cutter protocols</li>" +
-                "<li>Team of 14 professionals with over 100 years of combined experience</li>" +
+                "<li>Team of 10 professionals with over 100 years of combined experience</li>" +
                 "</ul>" +
                 "<p><strong>Benefits:</strong></p>" +
                 "<ul>" +
                 "<li>Competitive base pay plus performance bonuses</li>" +
                 "<li>401(k) with company matching</li>" +
                 "<li>Paid time off</li>" +
+                "<li>Vacation</li>" +
                 "<li>Continuing education support</li>" +
+                "<li>APTA Professional Membership</li>" +
                 "<li>Flexible scheduling (full-time or part-time)</li>" +
                 "</ul>" +
                 "<p><strong>Qualifications:</strong></p>" +
                 "<ul>" +
                 "<li>Doctor of Physical Therapy (DPT) or equivalent from an accredited program</li>" +
                 "<li>Wisconsin PT licensure or eligibility required</li>" +
-                "<li>Strong foundation in manual therapy — McKenzie Approach, myofascial release, joint mobilization</li>" +
+                "<li>Strong foundation in manual therapy — McKenzie Approach, myofascial release, joint mobilization, etc.</li>" +
                 "<li>New graduates with strong manual therapy foundations welcome</li>" +
                 "</ul>",
               datePosted: "2026-03-25",
@@ -112,7 +114,7 @@ export default function RootLayout({
               skills:
                 "Manual therapy, McKenzie Approach, Myofascial release, Joint mobilization, Therapeutic exercise",
               jobBenefits:
-                "401(k) with company matching, Paid time off, Flexible schedule, Continuing education, Performance bonuses",
+                "401(k) with company matching, Paid time off, Vacation, Continuing education, APTA Professional Membership, Flexible schedule, Performance bonuses",
             }),
           }}
         />
