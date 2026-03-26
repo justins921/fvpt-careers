@@ -21,7 +21,7 @@ const GOLD = "#c9a84c";
 async function main() {
   const doc = new PDFDocument({
     size: "letter",
-    margins: { top: 40, bottom: 36, left: 50, right: 50 },
+    margins: { top: 34, bottom: 28, left: 48, right: 48 },
     info: {
       Title: "Physical Therapist - Fox Valley Physical Therapy & Wellness Clinic",
       Author: "Fox Valley Physical Therapy & Wellness Clinic",
@@ -38,8 +38,8 @@ async function main() {
   // ── HEADER ────────────────────────────────────────────────────
   const hTop = doc.y;
   doc.save();
-  doc.roundedRect(L, hTop, W, 108, 7).fill(NAVY);
-  doc.rect(L, hTop + 105, W, 3).fill(TEAL);
+  doc.roundedRect(L, hTop, W, 105, 7).fill(NAVY);
+  doc.rect(L, hTop + 102, W, 3).fill(TEAL);
 
   doc.fontSize(8).font("Helvetica-Bold").fillColor(GOLD)
     .text("NOW HIRING  |  OSHKOSH, WI", L + 20, hTop + 12, { width: W - 40 });
@@ -48,7 +48,7 @@ async function main() {
     .text("Physical Therapist", L + 20, hTop + 26, { width: W - 40 });
 
   doc.fontSize(15).font("Helvetica-Bold").fillColor(TEAL_BRIGHT)
-    .text("Join a Clinic That's Different", L + 20, hTop + 52, { width: W - 40 });
+    .text("Join a Private Practice", L + 20, hTop + 52, { width: W - 40 });
 
   doc.fontSize(8.5).font("Helvetica").fillColor("#b0bec5")
     .text(
@@ -56,31 +56,33 @@ async function main() {
       L + 20, hTop + 72, { width: W - 40, lineGap: 2 }
     );
   doc.restore();
-  doc.y = hTop + 120;
+  doc.y = hTop + 114;
 
-  // ── STATS — single compact row ────────────────────────────────
+  // ── STATS ─────────────────────────────────────────────────────
   const sY = doc.y;
   const sGap = 8;
   const sW = (W - sGap * 3) / 4;
   [
-    { n: "36", l: "Years" },
-    { n: "35k+", l: "Patients" },
-    { n: "7,500 ft\u00B2", l: "Facility" },
-    { n: "#1", l: "In Winnebago Co." },
+    { n: "36", l: "Years in Practice" },
+    { n: "35k+", l: "Patients Treated" },
+    { n: "7,500", l: "Sq. Ft. Facility" },
+    { n: "#1", l: "Rated in Winnebago Co." },
   ].forEach((s, i) => {
     const x = L + i * (sW + sGap);
     doc.save();
     doc.roundedRect(x, sY, sW, 36, 4).fill(CREAM);
     doc.fontSize(15).font("Helvetica-Bold").fillColor(TEAL)
       .text(s.n, x, sY + 5, { width: sW, align: "center" });
-    doc.fontSize(6.5).font("Helvetica").fillColor(TEXT_LIGHT)
+    doc.fontSize(6).font("Helvetica").fillColor(TEXT_LIGHT)
       .text(s.l.toUpperCase(), x, sY + 23, { width: sW, align: "center" });
     doc.restore();
   });
-  doc.y = sY + 48;
+  doc.y = sY + 44;
 
   // ── HELPERS ───────────────────────────────────────────────────
-  function sectionGap() { doc.y += 14; }
+  function gap(n) { doc.y += n; }
+  // Track Y to help fit on one page
+  function debugY(label) { console.log(`${label}: y=${Math.round(doc.y)} / ${doc.page.height - doc.page.margins.bottom}`); }
   function label(t) {
     doc.fontSize(7).font("Helvetica-Bold").fillColor(TEAL)
       .text(t.toUpperCase(), L, doc.y, { characterSpacing: 0.8 });
@@ -89,86 +91,94 @@ async function main() {
   function heading(t) {
     doc.fontSize(13).font("Helvetica-Bold").fillColor(TEXT_DARK)
       .text(t, L, doc.y, { width: W });
-    doc.y += 5;
+    doc.y += 4;
   }
   function para(t) {
     doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
       .text(t, L, doc.y, { width: W, lineGap: 2 });
-    doc.y += 4;
+    doc.y += 3;
   }
 
   // ── WHY FVPT ──────────────────────────────────────────────────
   label("Why Fox Valley PT");
   heading("A Private Practice That Puts Its Team First");
-  para("We're not a franchise or corporate chain. Founded in 1990 by Steve and Regina Sobojinski, our 7,500 sq. ft. facility includes a therapeutic pool (the only one at a private practice in Oshkosh), a full gym, and the space for genuine one-on-one care. You'll join a team with over 100 years of combined experience.");
+  para("We're not a franchise or corporate chain with productivity quotas. Founded in 1990 by Steve and Regina Sobojinski, every decision has been made with the same philosophy: do right by patients, do right by your people.");
+  para("Our 7,500 sq. ft. facility includes a full therapeutic pool -- the only one at a private practice in Oshkosh -- a complete gym, and the space to do genuine one-on-one care. You'll join a team of PTs, PTAs, and an Athletic Trainer with over 100 years of combined experience.");
 
-  // Feature cards — single row of 4
-  const cW = (W - 18) / 4;
-  const cH = 44;
+  // Feature cards -- 2x2 grid
+  const cW = (W - 10) / 2;
+  const cH = 34;
   const fY = doc.y;
   [
-    { t: "Therapeutic\nPool", d: "Aquatic therapy" },
-    { t: "Real\nAutonomy", d: "No quotas" },
-    { t: "Flexible\nSchedule", d: "FT or PT" },
-    { t: "Growth\nSupported", d: "CE + mentorship" },
+    { t: "Therapeutic Pool", d: "Only private practice in Oshkosh with aquatic therapy." },
+    { t: "Real Autonomy", d: "No quotas, no cookie-cutter protocols." },
+    { t: "Flexible Scheduling", d: "Full-time or part-time, schedules that respect your life." },
+    { t: "Growth Supported", d: "CE, mentorship from experienced clinicians, room to specialize." },
   ].forEach((f, i) => {
-    const x = L + i * (cW + 6);
+    const col = i % 2, row = Math.floor(i / 2);
+    const x = L + col * (cW + 10);
+    const y = fY + row * (cH + 5);
     doc.save();
-    doc.roundedRect(x, fY, cW, cH, 4).lineWidth(0.5).strokeColor(BORDER).stroke();
-    doc.fontSize(8.5).font("Helvetica-Bold").fillColor(TEXT_DARK)
-      .text(f.t, x + 6, fY + 6, { width: cW - 12, align: "center", lineGap: 1 });
-    doc.fontSize(7.5).font("Helvetica").fillColor(TEXT_LIGHT)
-      .text(f.d, x + 6, fY + 30, { width: cW - 12, align: "center" });
+    doc.roundedRect(x, y, cW, cH, 4).lineWidth(0.5).strokeColor(BORDER).stroke();
+    doc.fontSize(9).font("Helvetica-Bold").fillColor(TEXT_DARK)
+      .text(f.t, x + 10, y + 7, { width: cW - 20 });
+    doc.fontSize(8).font("Helvetica").fillColor(TEXT_MID)
+      .text(f.d, x + 10, y + 20, { width: cW - 20, lineGap: 1 });
     doc.restore();
   });
-  doc.y = fY + cH;
+  doc.y = fY + 2 * (cH + 5) + 3;
 
-  sectionGap();
+  gap(8);
 
-  // ── COMPENSATION — two-column: text left, pills right ─────────
+  // ── BENEFITS ──────────────────────────────────────────────────
   label("Compensation & Benefits");
   heading("We Take Care of Our People");
+  para("Competitive pay based on experience, with a performance bonus structure that rewards quality work.");
 
   const benefitsLeft = [
     "Competitive Base Pay + Bonus",
     "401(k) with Company Match",
     "Paid Time Off",
+    "Vacation",
     "Continuing Education",
   ];
   const benefitsRight = [
+    "APTA Professional Membership",
     "Flexible Schedule",
     "Full-Time or Part-Time",
     "Casual Culture",
     "Diverse Caseload",
   ];
   const bY = doc.y;
-  const halfW = (W - 16) / 2;
+  const halfW = (W - 20) / 2;
 
   [benefitsLeft, benefitsRight].forEach((col, ci) => {
     col.forEach((b, bi) => {
-      const x = L + ci * (halfW + 16);
-      const y = bY + bi * 15;
+      const x = L + ci * (halfW + 20);
+      const y = bY + bi * 13;
       doc.save();
-      doc.circle(x + 4, y + 4.5, 2.5).fill(TEAL);
+      doc.circle(x + 3, y + 4, 2).fill(TEAL);
       doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_DARK)
-        .text(b, x + 12, y, { width: halfW - 12 });
+        .text(b, x + 10, y, { width: halfW - 10 });
       doc.restore();
     });
   });
-  doc.y = bY + 4 * 15;
+  doc.y = bY + 5 * 13;
 
-  sectionGap();
+  gap(8);
 
   // ── QUALIFICATIONS ────────────────────────────────────────────
   label("What We're Looking For");
   heading("The Right Fit, Not Just the Right Resume");
 
   [
-    "Licensed Physical Therapist in Wisconsin (or eligibility to obtain licensure)",
-    "Strong manual therapy foundation -- McKenzie Approach, myofascial release, joint mobilization",
-    "Comfortable treating all ages and abilities, including athletes",
-    "Positive communicator who partners with patients and referring physicians",
-    "New grads with strong manual therapy foundations welcome",
+    "Licensed Physical Therapist in Wisconsin (or eligibility to obtain WI licensure)",
+    "Strong foundation in manual therapy -- McKenzie Approach, muscle energy, myofascial release, joint mobilization, etc.",
+    "Comfortable treating patients of all ages and abilities, including athletes",
+    "Positive, self-directed communicator who partners well with patients and referring physicians",
+    "Motivated to be part of the Oshkosh community, not just a clinic employee",
+    "Eager to learn and grow in a team-oriented environment",
+    "New grads with strong manual therapy foundations are welcome to apply",
   ].forEach((q) => {
     const qY = doc.y;
     doc.save();
@@ -178,17 +188,17 @@ async function main() {
     doc.restore();
     doc.fontSize(8.5).font("Helvetica").fillColor(TEXT_MID)
       .text(q, L + 16, qY, { width: W - 16 });
-    doc.y += 5;
+    doc.y += 3;
   });
 
-  sectionGap();
+  gap(8);
 
-  // ── ABOUT — condensed ─────────────────────────────────────────
+  // ── ABOUT ─────────────────────────────────────────────────────
   label("About the Clinic");
   heading("Oshkosh's Most Trusted PT Practice Since 1990");
-  para("Founded by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT. Team of 14 professionals. Specialties: McKenzie Method, dry needling, Graston technique, aquatic therapy, TMJ, vestibular rehab, pediatric PT, and orthopedic/sports medicine.");
+  para("Established by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT, Fox Valley Physical Therapy has grown into a 7,500 sq. ft. facility with a team of 10 healthcare professionals. Clinical specialties include orthopedic and sports medicine care, spine care by the McKenzie Method, dry needling, aquatic therapy, TMJ treatment, and post-operative rehabilitation.");
 
-  sectionGap();
+  gap(6);
 
   // ── CTA BOX with QR Code ────────────────────────────────────
   const pageBottom = doc.page.height - doc.page.margins.bottom;
@@ -220,7 +230,7 @@ async function main() {
 
   doc.image(qrBuffer, qrX, ctaY + 7, { width: qrSize, height: qrSize });
   doc.restore();
-  doc.y = ctaY + ctaH + 10;
+  doc.y = ctaY + ctaH + 8;
 
   // ── FOOTER ────────────────────────────────────────────────────
   doc.fontSize(7).font("Helvetica").fillColor(TEXT_LIGHT)
