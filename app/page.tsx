@@ -64,6 +64,7 @@ export default function CareersPage() {
               alt="Fox Valley Physical Therapy"
               width={44}
               height={44}
+              className="brightness-0 invert"
             />
             <div className="hidden sm:block">
               <p className="text-white font-display font-bold text-sm leading-tight">
@@ -316,7 +317,7 @@ export default function CareersPage() {
             alt="Fox Valley Physical Therapy"
             width={52}
             height={52}
-            className="mx-auto"
+            className="brightness-0 invert mx-auto"
           />
           <p className="text-gray-400 text-sm mt-4">
             &copy; 2026 Fox Valley Physical Therapy &amp; Wellness Clinic &middot; 909 S.
