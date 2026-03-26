@@ -22,7 +22,9 @@ export async function POST(request: Request) {
 
     const resumeBuffer = Buffer.from(await resume.arrayBuffer());
 
-    const toEmail = process.env.TO_EMAIL || "admin@foxvalleyphysicaltherapy.com";
+    const toEmail = (process.env.TO_EMAIL || "admin@foxvalleyphysicaltherapy.com")
+      .split(",")
+      .map((e) => e.trim());
 
     await resend.emails.send({
       from: "Fox Valley PT Careers <onboarding@resend.dev>",
