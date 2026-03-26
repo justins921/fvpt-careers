@@ -124,16 +124,16 @@ export default function CareersPage() {
             </a>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 opacity-0 animate-fade-up animation-delay-300">
+          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 opacity-0 animate-fade-up animation-delay-300">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-center"
+                className="bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-center"
               >
-                <p className="font-display text-2xl sm:text-3xl font-extrabold text-teal-bright tracking-tight">
+                <p className="font-display text-3xl sm:text-4xl font-extrabold text-teal-bright tracking-tight">
                   {stat.number}
                 </p>
-                <p className="text-gray-400 text-xs mt-0.5 uppercase tracking-wider">{stat.label}</p>
+                <p className="text-gray-400 text-xs mt-1 uppercase tracking-wider">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -169,16 +169,16 @@ export default function CareersPage() {
                 </p>
               </div>
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-3">
+              <div className="mt-8 grid sm:grid-cols-2 gap-4">
                 {features.map((f) => (
                   <div
                     key={f.title}
-                    className="bg-white border border-border rounded-lg px-4 py-3 transition hover:border-teal hover:shadow-sm"
+                    className="bg-white border border-border rounded-xl p-5 transition hover:border-teal hover:shadow-md"
                   >
-                    <h3 className="font-display font-semibold text-text-dark text-sm">
+                    <h3 className="font-display font-semibold text-text-dark">
                       {f.title}
                     </h3>
-                    <p className="text-text-mid text-sm mt-1 leading-snug">{f.desc}</p>
+                    <p className="text-text-mid text-sm mt-1.5 leading-relaxed">{f.desc}</p>
                   </div>
                 ))}
               </div>
@@ -320,7 +320,7 @@ export default function CareersPage() {
             className="brightness-0 invert mx-auto"
           />
           <p className="text-gray-400 text-sm mt-4">
-            &copy; 2025 Fox Valley Physical Therapy &amp; Wellness Clinic &middot; 909 S.
+            &copy; 2026 Fox Valley Physical Therapy &amp; Wellness Clinic &middot; 909 S.
             Washburn St., Oshkosh, WI 54904
           </p>
           <a
