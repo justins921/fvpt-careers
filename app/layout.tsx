@@ -107,7 +107,7 @@ export default function RootLayout({
               },
               educationRequirements: {
                 "@type": "EducationalOccupationalCredential",
-                credentialCategory: "Doctor of Physical Therapy (DPT)",
+                credentialCategory: "postgraduate degree",
               },
               qualifications:
                 "Doctor of Physical Therapy (DPT) or equivalent from an accredited program. Wisconsin PT licensure or eligibility required.",
