@@ -44,30 +44,26 @@ export default function RootLayout({
               "@type": "JobPosting",
               title: "Physical Therapist",
               description:
-                "<p>Fox Valley Physical Therapy &amp; Wellness Clinic is seeking a motivated Physical Therapist to join our well-established private practice in Oshkosh, WI.</p>" +
-                "<p><strong>Why Fox Valley PT:</strong></p>" +
+                "<p>Fox Valley Physical Therapy is hiring a Physical Therapist in Oshkosh, WI. Family-owned private practice, independent since 1990, #1-rated in Winnebago County. $80,000–$100,000/year + $5,000 sign-on bonus.</p>" +
+                "<p><strong>What the Day Looks Like:</strong> 10–12 patients per day, one-on-one. 60-minute evals. 45–60 minute follow-ups. Documentation built into your schedule. Monday–Friday, no weekends, no on-call.</p>" +
+                "<p><strong>Compensation:</strong></p>" +
                 "<ul>" +
-                "<li>Oshkosh's oldest and highest-rated private practice, serving the community for 36 years</li>" +
-                "<li>7,500 sq. ft. facility with therapeutic pool and full gym</li>" +
-                "<li>Real clinical autonomy — no quotas, no cookie-cutter protocols</li>" +
-                "<li>Team of 10 professionals with over 100 years of combined experience</li>" +
+                "<li>$5,000 sign-on bonus + paid relocation</li>" +
+                "<li>$80,000–$100,000/year base</li>" +
+                "<li>Performance bonus tied to quality outcomes</li>" +
+                "<li>401(k) with company match</li>" +
+                "<li>PTO + vacation</li>" +
+                "<li>Continuing education budget + paid APTA membership</li>" +
+                "<li>WI license renewal reimbursed</li>" +
                 "</ul>" +
-                "<p><strong>Benefits:</strong></p>" +
+                "<p><strong>Career Growth:</strong> Specialty certification support (OCS, dry needling, McKenzie). Opportunity to become an associate of the practice by Year 5.</p>" +
+                "<p><strong>Why We're Different:</strong> 7,500 sq. ft. facility with therapeutic pool (only one at a private practice in Oshkosh). Team of PTs, PTAs, and Athletic Trainer with 100+ years combined experience. 35,000+ patients treated.</p>" +
+                "<p><strong>Requirements:</strong></p>" +
                 "<ul>" +
-                "<li>Competitive base pay plus performance bonuses</li>" +
-                "<li>401(k) with company matching</li>" +
-                "<li>Paid time off</li>" +
-                "<li>Vacation</li>" +
-                "<li>Continuing education support</li>" +
-                "<li>APTA Professional Membership</li>" +
-                "<li>Flexible scheduling (full-time or part-time)</li>" +
-                "</ul>" +
-                "<p><strong>Qualifications:</strong></p>" +
-                "<ul>" +
-                "<li>Doctor of Physical Therapy (DPT) or equivalent from an accredited program</li>" +
-                "<li>Wisconsin PT licensure or eligibility required</li>" +
-                "<li>Strong foundation in manual therapy — McKenzie Approach, myofascial release, joint mobilization, etc.</li>" +
-                "<li>New graduates with strong manual therapy foundations welcome</li>" +
+                "<li>WI PT license or eligibility</li>" +
+                "<li>Strong interest in orthopedic rehabilitation</li>" +
+                "<li>Manual therapy foundation — McKenzie, muscle energy, myofascial release, joint mobilization</li>" +
+                "<li>New grads with strong manual training welcome</li>" +
                 "</ul>",
               datePosted: "2026-03-25",
               validThrough: "2026-09-30T23:59:59Z",
@@ -114,7 +110,7 @@ export default function RootLayout({
               skills:
                 "Manual therapy, McKenzie Approach, Myofascial release, Joint mobilization, Therapeutic exercise",
               jobBenefits:
-                "401(k) with company matching, Paid time off, Vacation, Continuing education, APTA Professional Membership, Flexible schedule, Performance bonuses",
+                "$5,000 sign-on bonus, Paid relocation, 401(k) with company matching, Paid time off, Vacation, Continuing education budget, Paid APTA membership, WI license renewal reimbursed, Performance bonuses, Flexible schedule",
             }),
           }}
         />

@@ -1,59 +1,6 @@
 import Image from "next/image";
 import ApplicationForm from "@/components/ApplicationForm";
 
-const stats = [
-  { number: "36", label: "Years in Practice" },
-  { number: "35k+", label: "Patients Treated" },
-  { number: "7,500", label: "Sq. Ft. Facility" },
-  { number: "#1", label: "Rated in Winnebago Co." },
-];
-
-const features = [
-  {
-    icon: "\uD83C\uDFCA",
-    title: "Therapeutic Pool",
-    desc: "Only private practice in Oshkosh with aquatic therapy. Expand your treatment capabilities.",
-  },
-  {
-    icon: "\uD83E\uDD1D",
-    title: "Real Autonomy",
-    desc: "Treat patients the way you know is right. No quotas, no cookie-cutter protocols.",
-  },
-  {
-    icon: "\uD83D\uDCC5",
-    title: "Flexible Scheduling",
-    desc: "Full-time or part-time, we build schedules that respect your life.",
-  },
-  {
-    icon: "\uD83C\uDF31",
-    title: "Growth Supported",
-    desc: "Continuing education, mentorship from experienced clinicians, room to specialize.",
-  },
-];
-
-const benefits = [
-  "\uD83D\uDCB0 Competitive Base Pay + Bonus",
-  "\uD83D\uDCC8 401(k) with Company Match",
-  "\uD83C\uDFD6\uFE0F Paid Time Off",
-  "\uD83C\uDF34 Vacation",
-  "\uD83D\uDCDA Continuing Education",
-  "\uD83C\uDFC5 APTA Professional Membership",
-  "\u23F0 Flexible Schedule",
-  "\uD83C\uDFE5 Full-Time or Part-Time",
-  "\uD83E\uDD38 Professional Yet Casual Culture",
-  "\uD83D\uDD2C Diverse Caseload",
-];
-
-const qualifications = [
-  "Licensed Physical Therapist in Wisconsin (or eligibility to obtain WI licensure)",
-  "Strong foundation in manual therapy \u2014 McKenzie Approach, muscle energy, myofascial release, joint mobilization, etc.",
-  "Comfortable treating patients of all ages and abilities, including athletes",
-  "Positive, self-directed communicator who partners well with patients and referring physicians",
-  "Motivated to be part of the Oshkosh community, not just a clinic employee",
-  "Eager to learn and grow in a team-oriented environment",
-  "New grads with strong manual therapy foundations are welcome to apply",
-];
-
 export default function CareersPage() {
   return (
     <>
@@ -88,55 +35,25 @@ export default function CareersPage() {
       <section className="relative bg-navy overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
-          <div className="opacity-0 animate-fade-up">
-            <span className="inline-flex items-center gap-2 border border-gold/40 text-gold text-sm font-medium px-4 py-1.5 rounded-full">
-              <span className="w-2 h-2 bg-gold rounded-full" />
-              Now Hiring &middot; Oshkosh, WI
-            </span>
-          </div>
-
-          <h1 className="mt-6 opacity-0 animate-fade-up animation-delay-100">
+          <h1 className="opacity-0 animate-fade-up">
             <span className="block font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
               Physical Therapist
             </span>
-            <span className="block font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-teal-bright mt-2 tracking-tight">
-              Join a Private Practice
+            <span className="block font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-teal-bright mt-3 tracking-tight">
+              Fox Valley Physical Therapy
             </span>
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed opacity-0 animate-fade-up animation-delay-200">
-            Oshkosh&apos;s oldest and highest-rated private practice is growing. We&apos;re
-            looking for a hands-on PT who wants real autonomy, a remarkable team, and a
-            facility unlike anything else in the Fox Valley.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4 opacity-0 animate-fade-up animation-delay-200">
-            <a
-              href="#apply"
-              className="bg-teal hover:bg-teal-light text-white font-semibold px-8 py-3 rounded-lg transition text-base"
-            >
-              Apply Now &rarr;
-            </a>
-            <a
-              href="#why"
-              className="border border-white/20 hover:border-white/40 text-white font-medium px-8 py-3 rounded-lg transition text-base"
-            >
-              Learn More
-            </a>
-          </div>
-
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 opacity-0 animate-fade-up animation-delay-300">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-center"
-              >
-                <p className="font-display text-3xl sm:text-4xl font-extrabold text-teal-bright tracking-tight">
-                  {stat.number}
-                </p>
-                <p className="text-gray-400 text-xs mt-1 uppercase tracking-wider">{stat.label}</p>
-              </div>
-            ))}
+          <div className="mt-6 flex flex-wrap gap-3 text-sm opacity-0 animate-fade-up animation-delay-100">
+            <span className="inline-flex items-center gap-1.5 bg-white/10 text-gray-200 px-3 py-1.5 rounded-full">
+              Oshkosh, WI
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/10 text-gray-200 px-3 py-1.5 rounded-full">
+              Full-Time or Part-Time
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-gold/20 text-gold border border-gold/30 px-3 py-1.5 rounded-full font-semibold">
+              $80,000&ndash;$100,000 + $5,000 Sign-On Bonus
+            </span>
           </div>
         </div>
         <div className="h-[2px] bg-gradient-to-r from-teal to-gold" />
@@ -146,85 +63,183 @@ export default function CareersPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <div className="lg:grid lg:grid-cols-5 lg:gap-16">
           {/* Left Column */}
-          <div className="lg:col-span-3 space-y-20">
-            {/* Why Fox Valley PT */}
+          <div className="lg:col-span-3 space-y-16">
+            {/* The Short Version */}
             <section id="why">
-              <p className="text-teal text-sm font-semibold tracking-wide uppercase">
-                Why Fox Valley PT
-              </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
-                A Private Practice That Actually Puts Its Team First
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark tracking-tight">
+                The Short Version
               </h2>
-              <div className="mt-6 space-y-4 text-text-mid leading-relaxed">
+              <div className="mt-6 space-y-4 text-text-mid leading-relaxed text-lg">
                 <p>
-                  We&apos;re not a franchise or corporate chain with productivity quotas.
-                  Founded in 1990 by Steve and Regina Sobojinski, every decision has been
-                  made with the same philosophy: do right by patients, do right by your
-                  people.
+                  We&apos;re a family-owned private practice in Oshkosh &mdash; independent
+                  since 1990, #1-rated in Winnebago County, and the only private clinic in
+                  the area with a therapeutic pool. We&apos;re hiring a Physical Therapist
+                  who wants to actually treat patients without a productivity dashboard
+                  breathing down their neck.
                 </p>
                 <p>
-                  Our 7,500 sq. ft. facility includes a full therapeutic pool &mdash; the
-                  only one at a private practice in Oshkosh &mdash; a complete gym, and the
-                  space to do genuine one-on-one care. You&apos;ll join a team of PTs, PTAs,
-                  and an Athletic Trainer with over 100 years of combined experience.
+                  You&apos;ll see roughly 10&ndash;12 patients per day in one-on-one sessions.
+                  No double-booking. No 15-minute eval slots. Real time to do real work.
                 </p>
               </div>
+              <div className="mt-8">
+                <a
+                  href="#apply"
+                  className="bg-teal hover:bg-teal-light text-white font-semibold px-8 py-3 rounded-lg transition text-base inline-block"
+                >
+                  Apply Now &rarr;
+                </a>
+              </div>
+            </section>
 
+            {/* What the Day Actually Looks Like */}
+            <section>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark tracking-tight">
+                What the Day Actually Looks Like
+              </h2>
+              <ul className="mt-8 space-y-5">
+                {[
+                  { label: "Caseload", text: "10–12 patients per day, one-on-one. Strong focus on orthopedic rehabilitation, with post-surgical, spine, athletic, neurological, and aquatic cases mixed in." },
+                  { label: "Evals", text: "Full 60 minutes. Follow-ups are 45–60 minutes." },
+                  { label: "Documentation", text: "Built into your schedule. Our in-house SOAP note format is fast and clean — you finish your notes at work, not at 9pm on the couch." },
+                  { label: "Schedule", text: "Monday–Friday. No weekends. No on-call. Full-time is 36–40 hours; part-time is flexible around your life." },
+                  { label: "EMR", text: "Practice Perfect." },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-start gap-3">
+                    <span className="font-display font-bold text-text-dark min-w-[120px] sm:min-w-[140px] shrink-0">
+                      {item.label}:
+                    </span>
+                    <span className="text-text-mid leading-relaxed">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            {/* Compensation */}
+            <section>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark tracking-tight">
+                Compensation
+              </h2>
+              <ul className="mt-8 space-y-4">
+                {[
+                  <><strong>$5,000 sign-on bonus</strong> + paid relocation if you&apos;re moving to the Fox Valley</>,
+                  <><strong>Base:</strong> $80,000&ndash;$100,000/year, depending on experience</>,
+                  <><strong>Bonus:</strong> Performance bonus structure tied to quality outcomes, not volume quotas</>,
+                  <><strong>401(k)</strong> with company match</>,
+                  <><strong>PTO:</strong> Generous paid time off + vacation</>,
+                  <><strong>CEUs:</strong> Continuing education budget, plus paid APTA membership</>,
+                  <><strong>Licensure:</strong> WI license renewal reimbursed</>,
+                  <><strong>Culture:</strong> Professional but casual. No scrubs required.</>,
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-teal" />
+                    <span className="text-text-mid leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 bg-cream border border-border rounded-xl p-6">
+                <p className="text-text-dark leading-relaxed">
+                  <strong>We&apos;re personal healthcare, not corporate healthcare.</strong>{" "}
+                  That shows up everywhere &mdash; how we schedule, how we treat, how we
+                  pay, how we treat each other. It&apos;s the reason therapists stay for
+                  10+ years. Ask us about retention &mdash; we&apos;ll tell you the truth.
+                </p>
+              </div>
+            </section>
+
+            {/* Where This Role Goes */}
+            <section>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark tracking-tight">
+                Where This Role Goes
+              </h2>
+              <p className="mt-6 text-text-mid leading-relaxed">
+                This isn&apos;t a seat-warmer position. We&apos;re hiring someone we want
+                to invest in for the long haul.
+              </p>
+              <div className="mt-8 space-y-4">
+                <div className="bg-white border border-border rounded-xl p-5">
+                  <h3 className="font-display font-bold text-text-dark">
+                    Year 1&ndash;3
+                  </h3>
+                  <p className="text-text-mid mt-2 leading-relaxed">
+                    You&apos;ll earn a specialty certification &mdash; OCS, dry needling,
+                    McKenzie credentialing, or whatever direction your interests pull. We
+                    pay for it.
+                  </p>
+                </div>
+                <div className="bg-white border border-border rounded-xl p-5">
+                  <h3 className="font-display font-bold text-text-dark">
+                    Year 5
+                  </h3>
+                  <p className="text-text-mid mt-2 leading-relaxed">
+                    You have the opportunity to become an associate of the practice.
+                    We&apos;ll talk specifics during the interview, but the door is real and
+                    it&apos;s open.
+                  </p>
+                </div>
+              </div>
+              <p className="mt-6 text-text-mid leading-relaxed italic">
+                If you want a job that pays you to coast, we&apos;re not it. If you want a
+                career path with a finish line that isn&apos;t &ldquo;manager of a satellite
+                clinic,&rdquo; we should talk.
+              </p>
+            </section>
+
+            {/* Why We're Different */}
+            <section>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark tracking-tight">
+                Why We&apos;re Different
+              </h2>
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                {features.map((f) => (
+                {[
+                  {
+                    title: "Family-Built, Not VC-Owned",
+                    desc: "Founded in 1990 by Steve Sobojinski (OTR, CSCS) and Regina Sobojinski (PT). Every decision since then has been made by people who treat patients, not a board of directors in another state.",
+                  },
+                  {
+                    title: "Therapeutic Pool",
+                    desc: "The only one at a private practice in Oshkosh. If you’ve never had aquatic therapy as a treatment tool, you’re going to like what it does for your post-op and chronic-pain caseloads.",
+                  },
+                  {
+                    title: "A Real Team",
+                    desc: "PTs, PTAs, and an Athletic Trainer with 100+ years of combined experience under one roof. You’ll have people to bounce cases off who actually know what they’re talking about.",
+                  },
+                  {
+                    title: "Community-Embedded",
+                    desc: "35,000+ patients treated. The local orthopedic surgeons, primary care docs, and athletic programs know us by name.",
+                  },
+                ].map((f) => (
                   <div
                     key={f.title}
                     className="bg-white border border-border rounded-xl p-5 transition hover:border-teal hover:shadow-md"
                   >
-                    <h3 className="font-display font-semibold text-text-dark">
+                    <h3 className="font-display font-bold text-text-dark">
                       {f.title}
                     </h3>
-                    <p className="text-text-mid text-sm mt-1.5 leading-relaxed">{f.desc}</p>
+                    <p className="text-text-mid text-sm mt-2 leading-relaxed">
+                      {f.desc}
+                    </p>
                   </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Compensation & Benefits */}
-            <section>
-              <p className="text-teal text-sm font-semibold tracking-wide uppercase">
-                Compensation &amp; Benefits
-              </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
-                We Support Our People
-              </h2>
-              <p className="mt-6 text-text-mid leading-relaxed">
-                $80,000&ndash;$100,000/year based on experience, with a performance bonus
-                structure that rewards the quality work you&apos;re doing.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {benefits.map((b) => (
-                  <span
-                    key={b}
-                    className="inline-flex items-center bg-white border border-border text-text-dark text-sm font-medium px-4 py-2 rounded-full"
-                  >
-                    {b}
-                  </span>
                 ))}
               </div>
             </section>
 
             {/* What We're Looking For */}
             <section>
-              <p className="text-teal text-sm font-semibold tracking-wide uppercase">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark tracking-tight">
                 What We&apos;re Looking For
-              </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
-                The Right Fit, Not Just the Right Resume
               </h2>
-              <p className="mt-6 text-text-mid leading-relaxed">
-                We&apos;re a hands-on, evidence-based clinic. We want a therapist invested
-                in outcomes &mdash; and who wants to keep growing.
-              </p>
 
-              <ul className="mt-8 space-y-4">
-                {qualifications.map((q) => (
+              <h3 className="font-display font-bold text-text-dark mt-8 text-lg">
+                Required
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {[
+                  "WI PT license (or eligible to obtain it)",
+                  "Strong skills and genuine interest in orthopedic rehabilitation — this is the core of our caseload",
+                  "Strong manual therapy foundation — McKenzie, muscle energy, myofascial release, joint mobilization",
+                  "Comfortable treating a mixed caseload across all ages",
+                ].map((q) => (
                   <li key={q} className="flex items-start gap-3">
                     <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/10 flex items-center justify-center">
                       <svg
@@ -234,40 +249,51 @@ export default function CareersPage() {
                         stroke="currentColor"
                         strokeWidth={3}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
                     <span className="text-text-mid leading-relaxed">{q}</span>
                   </li>
                 ))}
               </ul>
+
+              <h3 className="font-display font-bold text-text-dark mt-8 text-lg">
+                Nice to Have
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {[
+                  "Dry needling certification (or interest in getting one — we’ll support it)",
+                  "Sports medicine, post-op, neurological, or aquatic therapy experience",
+                  "New grads with strong manual training are welcome",
+                ].map((q) => (
+                  <li key={q} className="flex items-start gap-3">
+                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-text-light" />
+                    <span className="text-text-mid leading-relaxed">{q}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-6 text-text-mid leading-relaxed">
+                That&apos;s it. We don&apos;t need five paragraphs of soft skills. If
+                you&apos;re a competent clinician who likes patients and wants to keep
+                getting better, you&apos;re who we&apos;re looking for.
+              </p>
             </section>
 
-            {/* About the Clinic */}
-            <section>
-              <p className="text-teal text-sm font-semibold tracking-wide uppercase">
-                About the Clinic
-              </p>
-              <h2 className="font-display text-3xl sm:text-4xl font-bold text-text-dark mt-3 tracking-tight">
-                Oshkosh&apos;s Most Trusted PT Practice Since 1990
+            {/* Got Questions */}
+            <section className="bg-cream border border-border rounded-xl p-6 sm:p-8">
+              <h2 className="font-display text-2xl font-bold text-text-dark">
+                Got Questions Before You Apply?
               </h2>
-              <div className="mt-6 space-y-4 text-text-mid leading-relaxed">
-                <p>
-                  Established by Steve Sobojinski OTR, CSCS and Regina Sobojinski PT, Fox
-                  Valley Physical Therapy has grown into a 7,500 sq. ft. facility with a
-                  team of 10 healthcare professionals. We specialize in one-on-one physical
-                  therapy, occupational therapy, athletic training, and sports analysis.
-                </p>
-                <p>
-                  Clinical specialties include orthopedic and sports medicine care, spine
-                  care by the McKenzie Method, dry needling, aquatic therapy, TMJ treatment,
-                  and post-operative rehabilitation.
-                </p>
-              </div>
+              <p className="mt-4 text-text-mid leading-relaxed">
+                Call or text the clinic at{" "}
+                <a href="tel:+19202358966" className="text-teal font-semibold hover:text-teal-light transition">
+                  (920) 235-8966
+                </a>{" "}
+                and ask for the hiring contact. We&apos;ll answer real questions about
+                caseload, comp, culture, or whatever else you want to know before sending
+                a resume.
+              </p>
             </section>
           </div>
 
@@ -279,13 +305,13 @@ export default function CareersPage() {
               {/* Clinic Info */}
               <div className="bg-cream rounded-xl p-5 space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="text-lg">{"\uD83D\uDCCD"}</span>
+                  <span className="text-lg">{"📍"}</span>
                   <span className="text-text-mid text-sm">
                     909 S. Washburn Street, Oshkosh, WI 54904
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-lg">{"\uD83D\uDCDE"}</span>
+                  <span className="text-lg">{"📞"}</span>
                   <a
                     href="tel:+19202358966"
                     className="text-teal text-sm hover:text-teal-light transition"
@@ -294,7 +320,7 @@ export default function CareersPage() {
                   </a>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-lg">{"\uD83C\uDF10"}</span>
+                  <span className="text-lg">{"🌐"}</span>
                   <a
                     href="https://www.foxvalleyphysicaltherapy.com"
                     target="_blank"
