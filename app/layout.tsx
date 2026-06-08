@@ -65,8 +65,8 @@ export default function RootLayout({
                 "<li>Manual therapy foundation — McKenzie, muscle energy, myofascial release, joint mobilization</li>" +
                 "<li>New grads with strong manual training welcome</li>" +
                 "</ul>",
-              datePosted: "2026-03-25",
-              validThrough: "2026-09-30T23:59:59Z",
+              datePosted: "2026-06-08",
+              validThrough: "2026-12-31T23:59:59Z",
               employmentType: ["FULL_TIME", "PART_TIME"],
               directApply: true,
               identifier: {
