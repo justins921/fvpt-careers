@@ -55,6 +55,7 @@ export default function RootLayout({
                 "<li>PTO + vacation</li>" +
                 "<li>Continuing education budget + paid APTA membership</li>" +
                 "<li>WI license renewal reimbursed</li>" +
+                "<li>Assistance with health insurance options</li>" +
                 "</ul>" +
                 "<p><strong>Career Growth:</strong> Specialty certification support (OCS, dry needling, McKenzie). Opportunity to become an associate of the practice by Year 5.</p>" +
                 "<p><strong>Why We're Different:</strong> 7,500 sq. ft. facility with therapeutic pool (only one at a private practice in Oshkosh). Team of PTs, PTAs, and Athletic Trainer with 100+ years combined experience. 35,000+ patients treated.</p>" +
