@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       .map((e) => e.trim());
 
     await resend.emails.send({
-      from: "Fox Valley PT Careers <careers@foxvalleyphysicaltherapy.com>",
+      from: "Fox Valley PT Careers <careers@careers.foxvalleyphysicaltherapy.com>",
       to: toEmail,
       subject: `New PT Application — ${name}`,
       html: `
