@@ -129,7 +129,7 @@ export default function CareersPage() {
                   <><strong>PTO:</strong> Generous paid time off + vacation</>,
                   <><strong>CEUs:</strong> Continuing education budget, plus paid APTA membership</>,
                   <><strong>Licensure:</strong> WI license renewal reimbursed</>,
-                  <><strong>Insurance:</strong> Assistance with health insurance options</>,
+                  <><strong>Insurance:</strong> Health insurance stipend</>,
                   <><strong>Culture:</strong> Professional but casual. No scrubs required.</>,
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
