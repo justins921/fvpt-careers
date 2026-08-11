@@ -52,7 +52,7 @@ export default function CareersPage() {
               Full-Time or Part-Time
             </span>
             <span className="inline-flex items-center gap-1.5 bg-gold/20 text-gold border border-gold/30 px-3 py-1.5 rounded-full font-semibold">
-              $80,000&ndash;$100,000 + $5,000 Sign-On Bonus
+              $85,000&ndash;$100,000 + $5,000 Sign-On Bonus
             </span>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function CareersPage() {
               <ul className="mt-8 space-y-4">
                 {[
                   <><strong>$5,000 sign-on bonus</strong> + paid relocation if you&apos;re moving to the Fox Valley</>,
-                  <><strong>Base:</strong> $80,000&ndash;$100,000/year, depending on experience</>,
+                  <><strong>Base:</strong> $85,000&ndash;$100,000/year, depending on experience</>,
                   <><strong>Bonus:</strong> Performance bonus structure tied to quality outcomes, not volume quotas</>,
                   <><strong>401(k)</strong> with company match</>,
                   <><strong>PTO:</strong> Generous paid time off + vacation</>,

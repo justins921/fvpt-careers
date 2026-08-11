@@ -44,12 +44,12 @@ export default function RootLayout({
               "@type": "JobPosting",
               title: "Physical Therapist",
               description:
-                "<p>Fox Valley Physical Therapy is hiring a Physical Therapist in Oshkosh, WI. Family-owned private practice, independent since 1990, #1-rated in Winnebago County. $80,000–$100,000/year + $5,000 sign-on bonus.</p>" +
+                "<p>Fox Valley Physical Therapy is hiring a Physical Therapist in Oshkosh, WI. Family-owned private practice, independent since 1990, #1-rated in Winnebago County. $85,000–$100,000/year + $5,000 sign-on bonus.</p>" +
                 "<p><strong>What the Day Looks Like:</strong> 10–12 patients per day, one-on-one. 60-minute evals. 45–60 minute follow-ups. Documentation built into your schedule. Monday–Friday, no weekends, no on-call.</p>" +
                 "<p><strong>Compensation:</strong></p>" +
                 "<ul>" +
                 "<li>$5,000 sign-on bonus + paid relocation</li>" +
-                "<li>$80,000–$100,000/year base</li>" +
+                "<li>$85,000–$100,000/year base</li>" +
                 "<li>Performance bonus tied to quality outcomes</li>" +
                 "<li>401(k) with company match</li>" +
                 "<li>PTO + vacation</li>" +
@@ -97,7 +97,7 @@ export default function RootLayout({
                 currency: "USD",
                 value: {
                   "@type": "QuantitativeValue",
-                  minValue: 80000,
+                  minValue: 85000,
                   maxValue: 100000,
                   unitText: "YEAR",
                 },
